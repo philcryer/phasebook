@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# phasebook.sh
+
 db="test"
 url="http://127.0.0.1:5984/$db"
 start="4"
