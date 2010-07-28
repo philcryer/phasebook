@@ -1,0 +1,1 @@
+Phasebook is a script to automate the retrieving of JSON from Facebook Graphs and deposing them into CouchDB. It should serve as (another) wake up call to those that think they're data is being protected once it has been entered on facebook.com
