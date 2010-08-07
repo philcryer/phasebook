@@ -1,16 +1,39 @@
 ABOUT
 ===== 
-Phasebook is a script to automate the retrieving of JSON from Facebook Graphs and deposing them into CouchDB. It should serve as (another) wake up call to those that think they're data is being protected once it has been entered on facebook.com
+Phasebook is a script to automate the retrieving of Facebook user's records in JSON format via Facebook's Open Graphs API and depositing them into CouchDB. It was written after I learning about Ron of SkullSecurity's research in revealing Facebook user's data. (see ACKNOWLEDGEMENTS below) It should serve as (another) wake up call to those that think their data is being protected once it has been entered into Facebook. While people using Facebook need to opt-out in order to not share their data, are they aware that any 'public' data is not only available on the site, but to anyone that wants to use the open API? What bounderies exist on the data at that point? 
+
+
+REQUIREMENTS
+============
+* git
+* curl
+* couchdb
+
+if you use Debian like me you can satisfy these requirements with the following command:
+	apt-get install git curl couchdb
+
+
+USAGE
+=====
+git clone git://github.com/philcryer/phasebook.git
+cd phasebook
+vi phasebook.sh 
+	* modify variables to match your enviroment
+./phasebook.sh
+	* view results in CouchDB's futon
 
 
 ACKNOWLEDGEMENTS
 ================
 Return of the Facebook Snatchers
 http://www.skullsecurity.org/blog/?p=887
+	Note: I've included the original torrent file in the 'extras' directory
+http://twitter.com/iagox86
 
 100 million Facebook pages leaked on torrent site
 http://www.thinq.co.uk/2010/7/28/100-million-facebook-pages-leaked-torrent-site/
 
+Example of available data
 http://graph.facebook.com/4
 
 
@@ -25,3 +48,12 @@ Redistributions of source code must retain the above copyright notice, this list
 Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 Neither the name of the <ORGANIZATION> nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+QUESTIONS/COMMENTS/FLAMES/ETC
+=============================
+phil
+@
+cryer
+.
+us

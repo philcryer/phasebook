@@ -4,8 +4,9 @@
 
 db="test"
 url="http://127.0.0.1:5984/$db"
+secret="name:password"
 
-#curl -X DELETE "$url"
-curl -X DELETE http://couchdb.fak3r.com/_utils/database.html?test
+curl -X DELETE $url --user $secret
+curl -X PUT $url --user $secret
 
 exit 0
