@@ -2,15 +2,28 @@
 
 # phasebook.sh
 
+host="127.0.0.1"
+port="5984"
 db="test"
-url="http://127.0.0.1:5984/$db"
 start="4"
-end="10"
+end="5"
 
 for i in `seq $start $end`;
 	do
+		# get user's record from facebook as a json document
 		curl http://graph.facebook.com/$i -o $i.json
-		curl -X POST -d @$i.json $url
+
+		# determine user's facebook id
+		uuid=`cat $i.json | cut -d\" -f4`
+
+		# define couchdb host to post to		
+		url="http://$host:$port/$db"
+
+		# post user's data into couchdb
+		curl -X POST $url --header 'Content-Type: application/json' --data @$i.json
+
+		# clean up
 		rm $i.json
-	done   
+	done
+
 exit 0
